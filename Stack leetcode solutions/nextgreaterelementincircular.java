@@ -13,7 +13,7 @@ public class nextgreaterelementincircular
             }
             if(i<n)
             {
-                stack.push(i);
+                stack.push(i);  
             }
         } 
         while(!stack.isEmpty())
