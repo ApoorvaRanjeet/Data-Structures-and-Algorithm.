@@ -1,22 +1,34 @@
 public class alterantepositivenegative 
 {
-    void rearrange(int[] a, int n) {
-        int[] arr = new int[n];
-        int pIndex = 0;
-        int nIndex = 1;
-
+    void rearrange(int arr[], int n) {
+        int[] result = new int[n];
+        int[] positives = new int[n];
+        int[] negatives = new int[n];
+        int posCount = 0, negCount = 0;
         for (int i = 0; i < n; i++) {
-            if (a[i] >= 0) {
-                arr[pIndex] = a[i];
-                pIndex += 2;
+            if (arr[i] >= 0) {
+                positives[posCount++] = arr[i];
             } else {
-                arr[nIndex] = a[i];
-                nIndex += 2;
+                negatives[negCount++] = arr[i];
             }
         }
+        int i = 0, j = 0, k = 0;
+        while (i < posCount && j < negCount) {
+            result[k++] = positives[i++];
+            result[k++] = negatives[j++];
+        }
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
+
+        while (i < posCount) {
+            result[k++] = positives[i++];
+        }
+
+        while (j < negCount) {
+            result[k++] = negatives[j++];
+        }
+
+        for (int l = 0; l < n; l++) {
+            arr[l] = result[l];
         }
     }
 
