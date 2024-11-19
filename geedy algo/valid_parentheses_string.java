@@ -1,4 +1,4 @@
-// import java.util.*;
+
 public class valid_parentheses_string 
 {
     public boolean valid(String s)
